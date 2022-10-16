@@ -1,0 +1,22 @@
+.row{
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    background-color: gray;
+    height: 50px;
+    width: 75%;
+}
+.col, .col-2, .col-3{
+    flex: 1;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    margin: 0px 10px 0px 10px;
+    background-color: skyblue;
+}
+.col-2{
+    flex: 2;
+}
+.col-3{
+    flex: 3;
+}

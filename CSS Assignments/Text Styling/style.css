@@ -1,0 +1,22 @@
+h1{
+    background-color: black;
+    font-weight: bold;
+    text-align: left;
+    font-family:cursive;
+    color: white;
+}
+h2{
+    background-color: purple;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+h3{
+    background-color: lightblue;
+    text-align: right;
+    color: darkblue;
+}
+#cloud{
+    color: cyan;
+}

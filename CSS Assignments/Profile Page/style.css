@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+.navbar{
+    background-color: black;
+    display: flex;
+    color: white;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: space-around;
+    padding: 0% 20% 0% 20%;
+}
+.navbar-profile{
+    padding-right: 50px;
+}
+.navbar-links{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+}
+.navbar-button{
+    border-style: solid;
+    width: 125px;
+    height: 30px;
+    color: white;
+    background-color: rgb(92, 182, 218);
+    border-color: black;
+    font-weight: bold;
+}
+li{
+    padding: 20px;
+}
+.list{
+    color: white;
+}
+a:link {
+    text-decoration: none;
+    color: white;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    text-decoration: underline;
+}
+img{
+width: 50px;
+}
+#left-side{
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 30px 0px 25%;
+    height: 800px;
+    width: 600px;
+}
+#right-side{
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 0px 0px 0px;
+    height: 800px;
+    width: 350px;
+}
+.user-card{
+    border-style: solid;
+    border-color: darkgray;
+    margin-bottom: 40px;
+    height: 300px;
+}
+.loc{
+    color: black;
+    display: inline-block;
+    padding-left: 10px;
+}
+.card-body{
+    padding: 30px 10px 10px 30px;
+    line-height: 1.5;
+}
+.card-header{
+    background-color: turquoise;
+    height: 75px;
+}
+.profile-picture{
+    border-radius: 50%;
+    border-style: solid;
+    border-color: darkgray;
+    width: 75px;
+    margin: 35px;
+}
+.gear, .marker{
+    width: 20px;
+    color: black;
+}
+.education-box{
+    border-style: solid;
+    border-color: darkgray;
+    height: 300px;
+}
+.friend-requests{
+    border-style: solid;
+    border-color: darkgray;
+    margin-bottom: 40px;
+    height: 250px;
+}
+.request-header{
+    background-color:rgb(63, 63, 63);
+    color: white;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.two{
+    border-radius: 100%;
+    background-color: lightgray;
+    width: 30px;
+    text-align: center;
+    color:rgb(63, 63, 63);
+}
+.education-header{
+    background-color:rgb(63, 63, 63);
+    color: white;
+    height: 75px;
+    padding: 25px;
+    font-size: 20px;
+}
+.education-body{
+    padding: 5px 10px 10px 30px;
+    line-height: 2;
+}
+.friends-list{
+    border-style: solid;
+    border-color: darkgray;
+    height: 400px;
+}
+.friend-header{
+    background-color:rgb(63, 63, 63);
+    color: white;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.picture{
+    border-radius: 50%;
+    width: 60px;
+}
+.request-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+    padding-top: 20px;
+}
+.request-images{
+    display: inline-block;
+    width: 20%;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+}
+.request-names{
+    height: 150px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 4;
+    margin-left: 5px;
+}
+.request-responses{
+    height: 150px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 4;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+.mark{
+    width: 40px;
+}
+.friend-body{
+    height: 275px;
+    display: flex;
+    justify-content: center;
+    line-height: 2;
+    padding-right: 75px;
+}
+.friend-images{
+    display: inline-block;
+    width: 20%;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+    margin-right: 15px;
+}
+.friend-names{
+    line-height: 4.3;
+}
+.friend-footer{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: darkgray;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+}

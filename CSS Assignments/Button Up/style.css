@@ -1,0 +1,23 @@
+#search{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: turquoise;
+    color: turquoise;
+    width: 100px;
+}
+#plus{
+    border-style: solid;
+    border-radius: 50%;
+    color: white;
+    background-color: turquoise;
+    border-color: turquoise;
+}
+#create-account{
+    border-style: solid;
+    border-color: black;
+    background-color: blue;
+    color: white;
+    width: 150px;
+    height: 25px;
+    box-shadow: 10px 5px black;
+}

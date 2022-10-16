@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Weather</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="container">
+    <nav class="navbar">
+        <div class="navbar-elements">
+            <h1 class="navbar-title">DojoWeather</h1>
+            <ul class="navbar-links" onclick="weatherAlert()">
+                <li class="location">Burbank</li>
+                <li class="location">Chicago</li>
+                <li class="location">Dallas</li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main-body">
+        <div class="weather-header">
+            <h1 class="header-title">San Jose</h1>
+            <div class="temp-pick">
+                <p>show temperature in </p>
+                <select class="temp-options" onchange="chooseTemp(this)">
+                    <option>°C</option>
+                    <option>°F</option>
+                </select>
+            </div>
+        </div>
+        <article class="weather-forecast">
+            <div class="weather-box">
+                <div class="weather-box-top">
+                    <h2>Today</h2>
+                    <img src="./images/some_rain.png" alt="rain image" class="image-size">
+                    <p>some rain</p>
+                </div>
+                <div class="weather-box-bottom">
+                    <h2 class="red" id="temp1box1">24°</h2>
+                    <h2 class="blue" id="temp2box1">18°</h2>
+                </div>
+            </div>
+            <div class="weather-box">
+                <div class="weather-box-top">
+                    <h2>Tomorrow</h2>
+                    <img src="./images/some_sun.png" alt="sun image" class="image-size">
+                    <p>some sun</p>
+                </div>
+                <div class="weather-box-bottom">
+                    <h2 class="red" id="temp1box2">27°</h2>
+                    <h2 class="blue" id="temp2box2">19°</h2>
+                </div>
+            </div>
+            <div class="weather-box">
+                <div class="weather-box-top">
+                    <h2>Friday</h2>
+                    <img src="./images/some_clouds.png" alt="cloud image" class="image-size">
+                    <p>some clouds</p>
+                </div>
+                <div class="weather-box-bottom">
+                    <h2 class="red" id="temp1box3">21°</h2>
+                    <h2 class="blue" id="temp2box3">16°</h2>
+                </div>
+            </div>
+            <div class="weather-box">
+                <div class="weather-box-top">
+                    <h2>Saturday</h2>
+                    <img src="./images/some_sun.png" alt="sun image" class="image-size">
+                    <p>some sun</p>
+                </div>
+                <div class="weather-box-bottom">
+                    <h2 class="red" id="temp1box4">26°</h2>
+                    <h2 class="blue" id="temp2box4">21°</h2>
+                </div>
+            </div>
+        </article>
+    </section>
+    <div class="cookies" id="cookie-box">
+        <img src="./images/cookie.png" alt="cookie image" class="cookie-image">
+        <div class="cookie-text">
+            <h2>Stop! Cookie time</h2>
+            <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyze our traffic. <a href="https://en.wikipedia.org/wiki/HTTP_cookie">Read more...</a></p>
+        </div>
+        <button class="accept-button" onclick="accept()">I Accept</button>
+    </div>
+<script src="./script.js"></script>
+</body>
+</html>

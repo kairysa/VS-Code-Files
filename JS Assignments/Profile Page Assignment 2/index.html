@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page Assignment</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="container">
+    <nav class="navbar">
+        <div class="navbar-profile">
+            <h1>Profile</h1>
+        </div>
+        <div class="navbar-links">
+            <ul class="links">
+                <li class="list"><a href="" class="navbar-anchor">Home</a></li>
+                <li class="list"><a href="" class="navbar-anchor">My Profile</a></li>
+                <li class="list"><a href="" class="navbar-anchor">Find Connections</a></li>
+                <li class="list"><button class="sign-out">Sign Out</button></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main-body">
+        <div class="left-side">
+            <article class="lsbox1">
+                <div class="lsbox1-header">
+                    <img class="profile-picture" src="./images/kairysa_1.png">
+                </div>
+                <div class="lsbox1-body">
+                    <h2 id="name">Noah Gardner</h2>
+                    <a href="https://en.wikipedia.org/wiki/Springfield,_Massachusetts" class="location"><img class="marker" src="./images/map-marker.png"> Springfield</a>
+                    <p id="bio">Developer | Engineer | Problem Solver</p>
+                    <p id="bio">Master of Shadows and the Internet!</p>
+                    <p onclick="editprofile()" class="edit-profile"><img src="./images/gear.png" class="gear"> edit profile</p>
+                </div>
+            </article>
+            <article class="lsbox2">
+                <div class="lsbox2-header">
+                    <h2>Education</h2>
+                </div>
+                <div class="lsbox2-body">
+                    <h2>Coding Dojo - Part Time Accelerated</h2>
+                    <p class="dates">Sept 2022 - Present</p>
+                </div>
+        </div>
+        <div class="right-side">
+            <article class="rsbox1">
+                <div class="rsbox1-header">
+                    <h2 class="number" id="request-number">2</h2>
+                    <h2>Connection Requests</h2>
+                </div>
+                <div class="rsbox1-body">
+                    <div class="friend-body" id="todde">
+                        <img src="./images/todd-s.jpg" class="picture">
+                        <p class="friend-name">Todd E</p>
+                        <div class="replies">
+                            <img src="./images/accept-circle.png" class="responses" onclick="accept1()">
+                            <img src="./images/close-circle.png" class="responses" onclick="decline1()">
+                        </div>
+                    </div>
+                    <div class="friend-body" id="philk">
+                        <img src="./images/phil-s.jpg" class="picture">
+                        <p class="friend-name">Phil K</p>
+                        <div class="replies">
+                            <img src="./images/accept-circle.png" class="responses" onclick="accept2()">
+                            <img src="./images/close-circle.png" class="responses" onclick="decline2()">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="rsbox2">
+                <div class="rsbox2-header">
+                    <h2 class="number" id="number-count">418</h2>
+                    <h2>Your Connections</h2>
+                </div>
+                <div class="rsbox2-body">
+                    <div class="friend-body">
+                        <img src="./images/adrien-s.jpg" class="picture">
+                        <p class="friend-name">Adrien D</p>
+                    </div>
+                    <div class="friend-body">
+                        <img src="./images/anne-s.jpg" class="picture">
+                        <p class="friend-name">Anne J</p>
+                    </div>
+                    <div class="friend-body">
+                        <img src="./images/alayne-s.jpg" class="picture">
+                        <p class="friend-name">Alayne T</p>
+                    </div>
+                    <div class="friend-body">
+                        <img src="./images/arry-s.jpg" class="picture">
+                        <p class="friend-name">Arry Y</p>
+                    </div>
+                </div>
+                <div class="rsbox2-footer">
+                    <a href="">View More</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>

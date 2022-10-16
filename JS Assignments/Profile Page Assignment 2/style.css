@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+.profile-picture{
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: 45px;
+    left: 50px;
+    border-style: solid;
+    border-color:gray;
+}
+.navbar{
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    display: flex;
+    padding: 10px;
+}
+.navbar-links{
+    display: flex;
+    flex: 1;
+}
+.links{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar-anchor{
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+.sign-out{
+    margin-left: 20px;
+    width: 90px;
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgb(84, 111, 168);
+    color: white;
+    box-shadow: 2px 2px black;
+    cursor: pointer;
+}
+.main-body{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    vertical-align: top;
+    padding-top: 20px;
+    padding: 10px;
+}
+.left-side{
+    flex: 1.5;
+}
+.right-side{
+    flex: 1;
+}
+.lsbox1, .lsbox2 {
+    border-style: solid;
+    border-color: gray;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.lsbox1-header{
+    background-color: rgb(5, 172, 172);
+    display: flex;
+}
+.lsbox1-body{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 50px;
+    line-height: 2;
+}
+.rsbox1, .rsbox2{
+    border-style: solid;
+    border-color: gray;
+    margin-bottom: 20px;
+}
+.location{
+    text-decoration: none;
+    color: black;
+}
+.marker, .gear{
+    width: 15px;
+}
+#bio{
+    line-height: 1.5;
+}
+.lsbox2-header{
+    background-color: rgb(54, 54, 54);
+    color: white;
+    padding: 20px;
+}
+.lsbox2-body{
+    padding: 20px;
+}
+.dates{
+    color: rgb(85, 85, 85);
+}
+.rsbox1-header, .rsbox2-header{
+    background-color: rgb(54, 54, 54);
+    color: white;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.number{
+    border-radius: 50%;
+    background-color: gray;
+    width: 50px;
+    text-align: center;
+}
+.rsbox1-body, .rsbox2-body{
+    display: flex;
+    flex-direction: column;
+}
+.friend-body{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.picture{
+    width: 75px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: gray;
+}
+.friend-name{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.responses{
+    width: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.replies{
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+}
+.rsbox2-footer{
+    padding: 20px;
+    border-style: solid;
+    border-color: gray;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.edit-profile{
+    color: purple;
+    text-decoration: underline;
+    cursor: pointer;
+}

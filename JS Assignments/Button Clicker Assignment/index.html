@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Clicker Assignment</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-title">
+                <h1 class="title">Dojonary</h1>
+            </div>
+            <div class="navbar-search">
+                <form>
+                    <input class="search-bar" type="text" placeholder="Search">
+                </form>
+            </div>
+            <div class="navbar-login">
+                <button class="login-button" onclick="turnOff(this)">Login</button>
+            </div>
+        </div>
+        <div class="left-side">
+            <div class="box-1">
+                <div class="def-box-1">
+                    <h1 class="def-word">ninja</h1>
+                    <h2 class="def-type">noun</h2>
+                    <h3 class="def-count">Plural: <span class="italic">ninjas</span></h3>
+                    <div class="def-box-2">
+                        <button class="like-button" onclick="alert('Ninja was liked')">13 likes</button>
+                    </div>
+                </div>
+                <div class="def-box-3">
+                    <p>A practitioner skilled in the <a href="https://en.wikipedia.org/wiki/Japan">Japanese</a> art of <a href="https://en.wikipedia.org/wiki/Ninjutsu">ninjutsu</a></p>
+                </div>
+            </div>
+            <div class="box-2">
+                <div class="def-box-1">
+                    <h1 class="def-word">ninja</h1>
+                    <h2 class="def-type">noun</h2>
+                    <h3 class="def-count">Plural: <span class="italic">ninjas</span></h3>
+                    <div class="def-box-2">
+                        <button class="like-button" onclick="alert('Ninja was liked')">37 likes</button>
+                    </div>
+                </div>
+                <div class="def-box-3">
+                    <p>A <a href="https://en.wikipedia.org/wiki/Programmer">programmer</a> who breaks down problems with <a href="https://en.wikipedia.org/wiki/Zen">zen</a>-like focus</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="paragraph-body">
+                <p class="right-side-content">Dojonary is defined by <span class="bold">YOU</span></p>
+            </div>
+            <div class="add-def-button">
+                <input type="button" value="Add Definition" class="add-button" onclick="hide(this)">
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
