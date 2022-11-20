@@ -1,0 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: rgb(38, 71, 109);
+    color: white;
+}

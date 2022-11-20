@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Checkerboard!</h1>
+        <div class="board-container">
+            <table class="table">
+            {% for x in range(num): %}
+                <tr>
+                    {% for y in range(num2): %}
+                    <td class="color-{{ (x+y)%2+1 }}" 
+                    {% if (x+y)%2+1 == 1 %}
+                        style="background-color: {{ color1 }}"
+                    {% elif (x+y)%2+1 == 2 %}
+                        style="background-color: {{ color2 }}"
+                    {% endif %}>
+                    </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

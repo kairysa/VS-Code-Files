@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: gray;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.color-1,.color-2{
+    width: 100px;
+    height: 100px;
+}
+.color-1{
+    background-color: red;
+}
+.color-2{
+    background-color: black;
+}
+.board-container{
+    margin-top: 50px;
+}

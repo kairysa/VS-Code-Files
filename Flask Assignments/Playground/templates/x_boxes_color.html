@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='three_boxes.css') }}">
+    <title>X Boxes</title>
+</head>
+<body class="container">
+    <h1 class="welcome">Welcome!</h1>
+    <div class="box-container">
+        {% for x in range (0,num) %}
+        <div class="box" style="background-color: {{ color }}"></div>
+        {% endfor %}
+    </div>
+</body>
+</html>

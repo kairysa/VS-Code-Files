@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.box-container{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    flex:1;
+    height: 100%;
+    overflow-wrap: normal;
+}
+.box{
+    background-color: lightblue;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10%;
+    width: 5%;
+    height: 10vh;
+}

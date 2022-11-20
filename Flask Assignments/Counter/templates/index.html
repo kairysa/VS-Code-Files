@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="container text-center">
+    <h1 class="counter">Counter</h1>
+    <p>You have visited this page {{ session['visits'] }} times!</p>
+    <div class="container-fluid d-flex justify-content-center">
+        <form action="/add" method="post">
+            <input type="submit" name="add_1" class="btn btn-primary" id="add_visit" value="Add Visit">
+        </form>
+        <form action="/add2" method="post">
+            <input type="submit" name="add_2" class="btn btn-success" id="add_visits" value="Add 2 Visit">
+        </form>
+        <form action="/clear" method="post">
+            <input type="submit" class="btn btn-danger" value="Clear Visits">
+        </form>
+    </div>
+    <div>
+        <br>
+        <form action="/custom" method="post">
+            <input type="number" id="customNum" class="form-control-sm" placeholder="input" name="customValue">
+            <input type="submit" class="btn btn-primary" value="Add Amount">
+        </form>
+    </div>
+</body>
+</html>
