@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Great Number Game!</title>
+</head>
+<body>
+    <div class="container d-flex align-items-center flex-column">
+        <div class="text-center">
+            <h1>Great Number Game!!</h1>
+            <p>I am thinking of a number between 1 and 100</p>
+        </div>
+        <div class="d-flex align-items-center flex-column">
+            <form  class="card bg-dark p-3 d-flex flex-column align-items-center" action="/guess" method="post">
+                <label for="guess-box" class="text-white">Take a guess!</label>
+                <input type="text" name="guesser" id="guess-box">
+                <input type="submit" class="btn btn-secondary mt-2" value="Submit Guess">
+            </form>
+        </div>
+    {% if 'guess' in session %}
+        {% if session['guess'] > session['randomInt'] %}
+            <div class="card bg-danger text-center text-white mt-2 p-4">
+                <h2>Too High!</h2>
+            </div>
+        {% elif session['guess'] < session['randomInt'] %}
+            <div class="card bg-danger text-center text-white mt-2 p-4">
+                <h2>Too Low!</h2>
+            </div>
+        {% elif session['guess'] == session['randomInt'] %}
+            <div class="card bg-success text-center text-white mt-2 p-4">
+                <h2>You guessed correctly!</h2>
+                <form action="/repeat" method="post">
+                    <p class="mt-2 mb-1 ">play again?</p>
+                    <input type="submit" class="btn btn-primary" value="click here!">
+                </form>
+            </div>
+        {% endif %}
+    {% endif %}
+    </div>
+</body>
+</html>
