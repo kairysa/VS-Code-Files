@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <h1>All Users</h1>
+        <table class="table table-dark table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Actions</th>
+                    <th scope="col">Posts</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for one_user in all_users %}
+                <tr>
+                    <td>{{one_user.first_name}}</td>
+                    <td>{{one_user.last_name}}</td>
+                    <td>{{one_user.email}}</td>
+                    <td>{{one_user.created_at}}</td>
+                    <td class="d-flex">
+                        <form method="post" action="/update_user/{{one_user.id}}">
+                            <input type="hidden" name="update" value="show">
+                            <input type="submit" class="text-primary" value="Show" name="update" style="background: none; border:none; text-decoration: underline;">  |
+                        </form>
+                        <form method="post" action="/update_user/{{one_user.id}}">
+                            <input type="hidden" name="update" value="edit">
+                            <input type="submit" class="text-primary" value="Edit" name="update" style="background: none; border:none; text-decoration: underline;">  |
+                        </form>
+                        <form method="post" action="/update_user/{{one_user.id}}">
+                            <input type="hidden" name="update" value="delete">
+                            <input type="submit" class="text-primary" name="update" name="delete" value="Delete" style="background: none; border:none; text-decoration: underline;">|
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="/update_user/{{one_user.id}}">
+                            <input type="hidden" name="update" value="post">
+                            <input type="submit" class="text-primary" value="view posts" style="background: none; border:none; text-decoration: underline;">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <form action="/new_friend" method="post">
+        <input type="submit" class="btn btn-primary m-4" value="Add User">
+    </form>
+</body>
+</html>
