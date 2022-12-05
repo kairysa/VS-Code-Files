@@ -14,11 +14,11 @@
         <div class="card bg-secondary text-white p-4">
             <form action="/edit_friend/{{info.id}}" method="post" class="form-group">
                 <label for="fname">First Name:</label>
-                <input type="text" name="fname" class="form-control">
+                <input type="text" name="fname" class="form-control" value="{{ info.first_name }}">
                 <label for="lname">Last Name:</label>
-                <input type="text" name="lname" class="form-control">
+                <input type="text" name="lname" class="form-control" value="{{ info.last_name }}">
                 <label for="email">Email:</label>
-                <input type="text" name="email" class="form-control">
+                <input type="text" name="email" class="form-control" value="{{ info.email }}">
                 <hr>
             <div class="d-flex justify-content-around">
                     <input type="submit" class="btn btn-success text-center" value="Apply Changes">
@@ -27,6 +27,13 @@
                     <input type="submit" class="btn btn-danger" value="Home">
                 </form>
             </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="text-warning">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         </div>
     </div>
     {% endfor %}
