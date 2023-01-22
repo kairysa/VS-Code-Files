@@ -2,7 +2,6 @@ import java.util.ArrayList;
 public class Order{
     private String name;
     private boolean ready;
-    private Item drinks;
     private ArrayList<Item> items;
 
     public Order(){
