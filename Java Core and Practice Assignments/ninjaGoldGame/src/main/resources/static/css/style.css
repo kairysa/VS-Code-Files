@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+
+.black-border{
+	border-style: solid;
+	border-color: black;
+}
