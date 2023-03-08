@@ -1,4 +1,4 @@
-package com.noahgardner.bandtogether.models;
+package com.noahgardner.productsandcategories.models;
 
 import java.util.Date;
 import java.util.List;
@@ -15,38 +15,33 @@ import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 @Entity
-@Table(name = "bands")
-public class Band {
+@Table(name = "products")
+public class Product {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
-	@Size(min=3)
+	@NotBlank(message = "Name must not be blank")
+	@Size(min = 2, message = "Name needs to be at least 2 characters")
 	private String name;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-				name = "band_has_user",
-				joinColumns = @JoinColumn(name = "band_id"),
-				inverseJoinColumns = @JoinColumn(name = "user_id")
-			)
-	private List<User> members;
+	@NotBlank(message = "Description must not be blank")
+	@Size(max = 400)
+	private String description;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-				name = "event_has_band",
-				joinColumns = @JoinColumn(name = "band_id"),
-				inverseJoinColumns = @JoinColumn(name = "event_id")
-			)
-	private List<Event> events;
+	@NotNull(message = "Price is required")
+	@Min(value = 0, message = "Price cannot be negative")
+	private Double price;
 	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -54,6 +49,15 @@ public class Band {
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+			name = "categories_products",
+			joinColumns = @JoinColumn(name = "product_id"),
+			inverseJoinColumns = @JoinColumn(name = "category_id")	
+			)
+	private List<Category> categories;
+	
 	
 	@PrePersist
 	public void onCreate() {
@@ -65,11 +69,7 @@ public class Band {
 		this.updatedAt = new Date();
 	}
 	
-	public Band() {};
-	
-	public Band(String name) {
-		this.name = name;
-	}
+	public Product() {}
 
 	public Long getId() {
 		return id;
@@ -79,8 +79,12 @@ public class Band {
 		return name;
 	}
 
-	public List<User> getMembers() {
-		return members;
+	public String getDescription() {
+		return description;
+	}
+
+	public Double getPrice() {
+		return price;
 	}
 
 	public Date getCreatedAt() {
@@ -91,6 +95,10 @@ public class Band {
 		return updatedAt;
 	}
 
+	public List<Category> getCategories() {
+		return categories;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -99,8 +107,12 @@ public class Band {
 		this.name = name;
 	}
 
-	public void setMembers(List<User> members) {
-		this.members = members;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 
 	public void setCreatedAt(Date createdAt) {
@@ -111,12 +123,8 @@ public class Band {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Event> getEvents() {
-		return events;
-	}
-
-	public void setEvents(List<Event> events) {
-		this.events = events;
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 	
 	

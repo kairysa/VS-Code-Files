@@ -1,4 +1,4 @@
-package com.noahgardner.bandtogether.models;
+package com.noahgardner.productsandcategories.models;
 
 import java.util.Date;
 import java.util.List;
@@ -21,32 +21,16 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "bands")
-public class Band {
+@Table(name= "categories")
+public class Category {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
-	@Size(min=3)
+	@NotBlank(message = "Name cannot be blank")
+	@Size(min = 2, message = "Name needs to be at least 2 characters")
 	private String name;
-	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-				name = "band_has_user",
-				joinColumns = @JoinColumn(name = "band_id"),
-				inverseJoinColumns = @JoinColumn(name = "user_id")
-			)
-	private List<User> members;
-	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-				name = "event_has_band",
-				joinColumns = @JoinColumn(name = "band_id"),
-				inverseJoinColumns = @JoinColumn(name = "event_id")
-			)
-	private List<Event> events;
 	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -54,6 +38,15 @@ public class Band {
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+			name = "categories_products",
+			joinColumns = @JoinColumn(name = "category_id"),
+			inverseJoinColumns = @JoinColumn(name = "product_id")	
+			)
+	private List<Product> products;
+	
 	
 	@PrePersist
 	public void onCreate() {
@@ -65,11 +58,7 @@ public class Band {
 		this.updatedAt = new Date();
 	}
 	
-	public Band() {};
-	
-	public Band(String name) {
-		this.name = name;
-	}
+	public Category() {}
 
 	public Long getId() {
 		return id;
@@ -77,10 +66,6 @@ public class Band {
 
 	public String getName() {
 		return name;
-	}
-
-	public List<User> getMembers() {
-		return members;
 	}
 
 	public Date getCreatedAt() {
@@ -91,16 +76,16 @@ public class Band {
 		return updatedAt;
 	}
 
+	public List<Product> getProducts() {
+		return products;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public void setMembers(List<User> members) {
-		this.members = members;
 	}
 
 	public void setCreatedAt(Date createdAt) {
@@ -111,12 +96,8 @@ public class Band {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Event> getEvents() {
-		return events;
-	}
-
-	public void setEvents(List<Event> events) {
-		this.events = events;
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	
 	

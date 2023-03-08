@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -37,7 +38,11 @@ public class Event {
 				joinColumns = @JoinColumn(name = "event_id"),
 				inverseJoinColumns = @JoinColumn(name = "band_id")
 			)
-	List<Band> bands;
+	private List<Band> bands;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "venue_id")
+	private Venue venue;
 	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

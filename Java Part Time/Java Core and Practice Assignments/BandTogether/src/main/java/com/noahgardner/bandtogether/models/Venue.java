@@ -3,6 +3,7 @@ package com.noahgardner.bandtogether.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,43 +11,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "bands")
-public class Band {
-	
+@Table(name = "venues")
+public class Venue {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotBlank
-	@Size(min=3)
 	private String name;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-				name = "band_has_user",
-				joinColumns = @JoinColumn(name = "band_id"),
-				inverseJoinColumns = @JoinColumn(name = "user_id")
-			)
-	private List<User> members;
-	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-				name = "event_has_band",
-				joinColumns = @JoinColumn(name = "band_id"),
-				inverseJoinColumns = @JoinColumn(name = "event_id")
-			)
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "venue")
 	private List<Event> events;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User owner;
 	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -65,11 +55,7 @@ public class Band {
 		this.updatedAt = new Date();
 	}
 	
-	public Band() {};
-	
-	public Band(String name) {
-		this.name = name;
-	}
+	public Venue() {}
 
 	public Long getId() {
 		return id;
@@ -79,8 +65,8 @@ public class Band {
 		return name;
 	}
 
-	public List<User> getMembers() {
-		return members;
+	public List<Event> getEvents() {
+		return events;
 	}
 
 	public Date getCreatedAt() {
@@ -99,8 +85,8 @@ public class Band {
 		this.name = name;
 	}
 
-	public void setMembers(List<User> members) {
-		this.members = members;
+	public void setEvents(List<Event> events) {
+		this.events = events;
 	}
 
 	public void setCreatedAt(Date createdAt) {
@@ -111,13 +97,11 @@ public class Band {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Event> getEvents() {
-		return events;
+	public User getOwner() {
+		return owner;
 	}
 
-	public void setEvents(List<Event> events) {
-		this.events = events;
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
-	
-	
 }

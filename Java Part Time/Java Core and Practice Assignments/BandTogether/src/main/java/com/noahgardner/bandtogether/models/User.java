@@ -4,6 +4,7 @@ package com.noahgardner.bandtogether.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -42,7 +44,7 @@ public class User {
 	@NotBlank
 	@Email(message="Please enter a valid email!")
 	private String email;
-	
+
 	@NotEmpty(message="Password is required!")
 	@Size(min = 8, message = "Password must be at least 8 characters.")
 	private String password;
@@ -58,7 +60,10 @@ public class User {
 				joinColumns = @JoinColumn(name = "user_id"),
 				inverseJoinColumns = @JoinColumn(name = "band_id")
 			)
-	List<Band> bands;
+	private List<Band> bands;
+	
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Venue> venues;
 	
 	
 	@Column(updatable = false)
@@ -160,6 +165,14 @@ public class User {
 
 	public void setBands(List<Band> bands) {
 		this.bands = bands;
+	}
+	
+	public List<Venue> getVenues() {
+		return venues;
+	}
+
+	public void setVenues(List<Venue> venues) {
+		this.venues = venues;
 	}
 	
 	
