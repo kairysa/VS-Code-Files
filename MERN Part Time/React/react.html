@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello React</title>
+    </head>
+    <body>
+        <div id="root">
+            <h1>First React page rendering...</h1>
+        </div>
+        
+        <script crossorigin="" src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin="" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+
+        <script>
+            const App = React.createElement("h1", {}, "Our First React page has rendered");
+            ReactDOM.render(App, document.getElementById("root"));
+
+            // Notice the HTML syntax here. Although this may look like regular HTML, it's actually not. 
+            ReactDOM.render(<h1>Hello!</h1>, document.getElementById("root"));
+            // **Here is what the Babel translation looks like**
+            ReactDOM.render(React.createElement("h1", null, "Hello!"), document.getElementById("root"));
+        </script>
+    </body>
+</html>
+
+<!-- JSX and Babel. Browsers cannot understand JSX, so we must use Babel, which is a transpiler, that will turn JSX into JavaScript that browsers can understand. 
+    We can add babel into our page by using a simple script tag, example shown above.
+
+
+    JSX is an optional syntax that is somply just syntactic sugar to make it so a) we can bring back the regular html syntax, b) we dont have to type React.createElement()
+    and c) ultimately reduce the amount of code we write. -->
