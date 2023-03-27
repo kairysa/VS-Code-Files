@@ -1,0 +1,20 @@
+.Todo-list {
+    width: 80%;
+    padding: 2%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.form{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.list{
+    width: 50%;
+}
+
+.line-through{
+    text-decoration-line: line-through;
+}

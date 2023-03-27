@@ -1,0 +1,33 @@
+.header {
+    background-color: #6aa84f;
+    height: 5rem;
+    width: 100%;
+}
+
+.nav {
+    background-color: #6fa8dc;
+    width: 20%;
+    height: 30rem;
+}
+
+.main {
+    background-color: #e06666;
+    width: 80%;
+    height: 40rem;
+    margin-left: 20px;
+}
+
+.subcontent {
+    background-color: #ffd966;
+    height: 27rem;
+    margin: 20px;
+}
+
+.ad {
+    background-color: #b4a7d6;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 10rem;
+}
