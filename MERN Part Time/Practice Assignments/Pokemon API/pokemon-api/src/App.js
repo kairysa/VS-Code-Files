@@ -10,6 +10,7 @@ function App() {
         setPokemon(response.data.results);
       })
       .catch((err) => {
+        alert("These aren't the droids you are looking for");
         console.log(err);
       })
   }, []);  
