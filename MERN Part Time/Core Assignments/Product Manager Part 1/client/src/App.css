@@ -1,5 +1,17 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #273746;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
@@ -35,4 +47,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card-form {
+  height: 50vh;
 }
