@@ -8,7 +8,8 @@ module.exports.index = (req, res) => {
 module.exports.findAllProducts = (req, res) => {
   Product.find()
     .then((allProducts) => {
-      res.json({products : allProducts})
+      console.log(allProducts);
+      res.json({products : allProducts});
     })
     .catch((err) => {
       res.json({ message: 'Something went wrong', error: err })
